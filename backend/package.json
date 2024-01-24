@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/jest": "^29.5.11",
+    "@types/json-server": "^0.14.7",
+    "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "json-server": "^1.0.0-alpha.22",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "backend:compile": "tsc",
+    "backend:compile:watch": "tsc --watch",
+    "backend:start": "npx json-server db.json --port 3000",
+    "backend:test:unit": "jest",
+    "backend:test:unit:coverage": "jest --coverage",
+    "backend:lint": "eslint . --ext .ts"
+  }
+}
