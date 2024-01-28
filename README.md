@@ -41,9 +41,15 @@ Progress', and 'Done', and users can easily move tasks between these states usin
 3. **Run the Application**
     - Start the JSON Server.
       ```
+      cd backend
       json-server --watch db.json
+        ```
+    - Build the frontend.
       ```
-    - Open `index.html` in a web browser.
+      cd frontend
+      npm run frontend:build
+      ```
+    - Open `dist/pages/index.html` in a web browser.
 
 ## Usage
 
@@ -64,10 +70,13 @@ Contributions to the project are welcome. Please follow the guidelines below:
 
 ## Testing
 
-- Run unit tests using Jest:
+- Run backend unit tests using Jest:
   ```
-  npm run test
+  cd backend
+  npm run backend:test:unit
   ```
+  
+- Frontend unit tests are not available at this time.
 
 ## License
 
