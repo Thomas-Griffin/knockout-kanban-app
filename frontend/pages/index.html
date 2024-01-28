@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Knockout Kanban App</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"
+          integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="../styles/app.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+<div class="app-container">
+  <h1 class="app-title">Kanban App</h1>
+  <h2 class="loading-indicator" data-bind="visible: $root.isLoading">Loading...</h2>
+  <div class="kanban-board" data-bind="foreach: { data: $root.columns, as: 'column' }, visible: !$root.isLoading()">
+    <div class="kanban-column" data-bind="component: { name: 'column-component', params: column }, attr: { 'column-id': column.id }, event: {drop: function(data, event) { $root.drop(event) }, dragover: function(data, event) { return false } }"></div>
+  </div>
+</div>
+
+</body>
+<script src="../app.js"></script>
+</html>

@@ -1,0 +1,5 @@
+<label>
+  <input contenteditable class="kanban-task"
+       draggable="true"
+       data-bind="text: task.contents, value:task.contents, valueUpdate:'afterkeydown', event: { dragstart: function(data, event) { $root.drag(event, task); return true }, dblclick: $root.deleteTask.bind($root, task) }">
+</label>

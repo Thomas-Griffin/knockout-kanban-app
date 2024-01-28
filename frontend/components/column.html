@@ -1,0 +1,7 @@
+<h1 class="kanban-column-title"
+    data-bind="text: column.title() + ' (' + $root.taskCountByColumnId(column.id()) + ')'"></h1>
+<div data-bind="foreach: { data: $root.getTasksByColumn(column.id()), as: 'task' }">
+  <div data-bind="component: { name: 'task-component', params: {'task': task} }"></div>
+</div>
+<button data-bind="click: function() { $root.addTaskToColumn(column.id()) }" class="kanban-button" type="button"><i
+  class="fas fa-plus"></i></button>
